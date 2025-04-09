@@ -1,3 +1,12 @@
+<?php
+if(isset($_POST['submit'])){
+    include_once (Conexao)
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
-<form action="">
+<form action="HRegister.php" method="post">
     <div class="titulo">
         <h2>Crie sua conta</h2>
         <div class="barra-horizontal"></div>
@@ -20,7 +29,7 @@
     </div>
 
     <div class="campo_input estilo_input">
-        <label for="email">Email</label>
+        <label for="email">Email*</label>
         <input type="email" id="email" required />
     </div>
 
