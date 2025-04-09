@@ -67,3 +67,15 @@ body{
     background-size: cover;
     background-position: 50%;
 }
+.botao {
+    transition: transform 0.2s ease;
+}
+.botao:hover {
+    transform: scale(1.05);
+}
+form {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+}
