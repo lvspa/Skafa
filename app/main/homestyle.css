@@ -66,6 +66,7 @@ body{
     background-color: rgb(255, 234, 210);
     background-size: cover;
     background-position: 50%;
+    background-image: url("image_files/background.png");
 }
 .botao {
     transition: transform 0.2s ease;
