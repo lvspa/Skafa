@@ -1,6 +1,7 @@
 <?php
 class Database {
     private static $conn;
+
     public static function connect() {
         if (self::$conn === null) {
             $config= require 'config.php';
@@ -15,6 +16,7 @@ class Database {
                 echo "Error connecting :(";
             }
         }
+
         return self::$conn;
     }
 
