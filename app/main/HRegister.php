@@ -1,6 +1,16 @@
 <?php
 if(isset($_POST['submit'])){
-    include_once (Conexao)
+    require_once ("ConexaoBD.php");
+    $conn=Database::connect();
+    $nome=$_POST["nome"];
+    $email=$_POST["email"];
+    $senha=$_POST["senha"];
+    $stmt = $conn->prepare("INSERT INTO user(nome, email, senha) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $nome, $email, $senha);
+    $stmt->execute();
+
+
+
 
 }
 
@@ -17,29 +27,29 @@ if(isset($_POST['submit'])){
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 <body>
-<form action="HRegister.php" method="post">
+<form action="HRegister.php" method="POST">
     <div class="titulo">
         <h2>Crie sua conta</h2>
         <div class="barra-horizontal"></div>
     </div>
 
     <div class="campo_input estilo_input">
-        <label for="nome">Nome completo</label>
+        <label for="nome" name="nome">Nome completo</label>
         <input type="text" id="nome" required />
     </div>
 
     <div class="campo_input estilo_input">
-        <label for="email">Email*</label>
+        <label for="email" name="email">Email*</label>
         <input type="email" id="email" required />
     </div>
 
     <div class="campo_input estilo_input">
-        <label for="senha"><strong>Senha</strong></label>
+        <label for="senha" name="senha"><strong>Senha</strong></label>
         <input type="password" id="senha" required />
     </div>
 
     <div class="campo_input estilo_input">
-        <label for="confirmar_senha"><strong>Confirmar Senha</strong></label>
+        <label for="confirmar_senha" name="submit"><strong>Confirmar Senha</strong></label>
         <input type="password" id="confirmar_senha" required />
     </div>
 
